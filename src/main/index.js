@@ -1,12 +1,13 @@
 import { app, shell, BrowserWindow } from 'electron'
 import * as path from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
+import {WINDOW_HEIGHT, WINDOW_WIDTH} from "../utils/const";
 
 function createWindow() {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 900,
-    height: 670,
+    width: WINDOW_WIDTH,
+    height: WINDOW_HEIGHT,
     show: false,
     autoHideMenuBar: true,
     ...(process.platform === 'linux'
@@ -21,7 +22,7 @@ function createWindow() {
   })
 
   mainWindow.on('ready-to-show', () => {
-    mainWindow.show()
+    mainWindow.show();
   })
 
   mainWindow.webContents.setWindowOpenHandler((details) => {

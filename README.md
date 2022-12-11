@@ -1,4 +1,4 @@
-# electron-brew-timer
+# brew-timer-electron
 
 An Electron application with React
 
