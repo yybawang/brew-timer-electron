@@ -15,9 +15,11 @@ const Step1 = ({seconds}) => {
       <Steps.Step title={'静置降温'} description={'等待降温到70°C'} />
       <Steps.Step title={'放入麦芽物'} description={'控制温度在 65°C - 70°C之间'} />
       <Steps.Step title={'搅拌一下.'} />
-      <Steps.Step title={'搅拌一下..'} />
+      <Steps.Step title={'搅拌一下..'} description={'测试一下温度'} />
       <Steps.Step title={'搅拌一下...'} />
-      <Steps.Step title={'时间快到了'} description={'吊出大麦网袋，持续2分钟沥出剩余麦芽汁'} />
+      <Steps.Step title={'搅拌一下....'} description={'测试一下温度'} />
+      <Steps.Step title={'搅拌一下.....'} />
+      <Steps.Step title={'时间到了'} description={'吊出大麦网袋，持续2分钟沥出剩余麦芽汁'} />
     </Steps>
   );
 };
