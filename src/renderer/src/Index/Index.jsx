@@ -3,6 +3,7 @@ import {Steps, Toast} from "@douyinfe/semi-ui";
 import {STATUSES} from "./const";
 import Step1 from "./Step1";
 import Timer from "./Timer";
+import Step2 from "./Step2";
 
 const Index = () => {
   const [step, setStep] = React.useState(0);
@@ -36,7 +37,8 @@ const Index = () => {
       </div>
       <div className={['basis-1/3 p-4', STATUSES[step].bg].join(' ')}>
         <div className={'flex justify-center text-xl'}>{STATUSES[step].name}</div>
-        <div className={'mt-4'}><Step1 seconds={seconds} /></div>
+        {step === 0 && <div className={'mt-4'}><Step1 seconds={seconds} /></div>}
+        {step === 1 && <div className={'mt-4'}><Step2 seconds={seconds} /></div>}
       </div>
     </div>
   );
