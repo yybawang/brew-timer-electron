@@ -9,24 +9,23 @@ const Timer = ({seconds, setSeconds}) => {
   const hourRef = React.useRef(hour);
   const minuteRef = React.useRef(minute);
   const secondRef = React.useRef(second);
-  const intervalRef = React.useRef(0);
 
   hourRef.current = hour;
   minuteRef.current = minute;
   secondRef.current = second;
 
   React.useEffect(() => {
-    pause || start();
-  }, [seconds, pause]);
-
-  async function start(){
-    if(seconds < 0){
-      clearInterval(intervalRef);
+    console.log(seconds);
+    if(seconds <= 0){
       setHour('00');
       setMinute('00');
       setSecond('00');
       return;
     }
+    pause || start();
+  }, [seconds, pause]);
+
+  async function start(){
     let hours = ''+Math.floor(seconds / 60 / 60);
     let minutes = ''+Math.floor((seconds - hours * 3600) / 60);
     let secs = ''+(seconds % 60);
@@ -38,7 +37,7 @@ const Timer = ({seconds, setSeconds}) => {
   }
 
   function toggle(){
-    setPause(val => !val);
+    seconds > 0 && setPause(val => !val);
   }
 
   return (

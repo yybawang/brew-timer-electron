@@ -11,7 +11,7 @@ const Index = () => {
 
   function start(id){
     if(seconds > 0){
-      Toast.warning('倒计时还未完成');
+      Toast.info('倒计时还未完成');
       return;
     }
     setStep(id);
@@ -30,7 +30,6 @@ const Index = () => {
             <div className={['action', STATUSES[0].bg].join(' ')} onClick={() => start(0)}><div>开始糖化</div></div>
             <div className={['action', STATUSES[1].bg].join(' ')} onClick={() => start(1)}><div>开始煮沸</div></div>
           </div>
-
           <Timer seconds={seconds} setSeconds={setSeconds} />
           <div className={['action bg-gray-400 text-white'].join(' ')} onClick={() => reset()}><div>重置计时</div></div>
         </div>
