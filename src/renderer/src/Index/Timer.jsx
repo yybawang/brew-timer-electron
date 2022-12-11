@@ -15,7 +15,6 @@ const Timer = ({seconds, setSeconds}) => {
   secondRef.current = second;
 
   React.useEffect(() => {
-    console.log(seconds);
     if(seconds <= 0){
       setHour('00');
       setMinute('00');
