@@ -6,13 +6,13 @@ const Timer = ({seconds, setSeconds}) => {
   const [minute, setMinute] = React.useState('00');
   const [second, setSecond] = React.useState('00');
   const [pause, setPause] = React.useState(false);
-  const hourRef = React.useRef(hour);
-  const minuteRef = React.useRef(minute);
-  const secondRef = React.useRef(second);
+  // const hourRef = React.useRef(hour);
+  // const minuteRef = React.useRef(minute);
+  // const secondRef = React.useRef(second);
 
-  hourRef.current = hour;
-  minuteRef.current = minute;
-  secondRef.current = second;
+  // hourRef.current = hour;
+  // minuteRef.current = minute;
+  // secondRef.current = second;
 
   React.useEffect(() => {
     if(seconds <= 0){
@@ -41,11 +41,11 @@ const Timer = ({seconds, setSeconds}) => {
 
   return (
     <div className={'h-72 w-full bg-gray-500 flex items-center justify-center'} onClick={() => toggle()}>
-      <div className={'timer bg-white font-medium flex justify-center items-center'} style={{width: 240}}><span>{hourRef.current}</span></div>
+      <div className={'timer bg-white font-medium flex justify-center items-center'} style={{width: 240}}><span>{hour}</span></div>
       <div className={'timer text-gray-400'}><span>:</span></div>
-      <div className={'timer bg-white font-medium flex justify-center items-center'} style={{width: 240}}><span>{minuteRef.current}</span></div>
+      <div className={'timer bg-white font-medium flex justify-center items-center'} style={{width: 240}}><span>{minute}</span></div>
       <div className={'timer text-gray-400'}><span>:</span></div>
-      <div className={'timer bg-white font-medium flex justify-center items-center'} style={{width: 240}}><span>{secondRef.current}</span></div>
+      <div className={'timer bg-white font-medium flex justify-center items-center'} style={{width: 240}}><span>{second}</span></div>
     </div>
   );
 };
